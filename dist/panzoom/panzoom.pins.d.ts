@@ -1,4 +1,4 @@
-import { PanzoomInstance } from "./panzoom";
+import { type PanzoomInstance } from "./panzoom";
 export type PinsOptions = {};
 export type Pin = {
     x: string | number;

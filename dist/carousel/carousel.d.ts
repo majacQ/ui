@@ -1,16 +1,11 @@
 import { TweenInstance } from "../libs/tween";
 import { GesturesInstance, GesturesOptions } from "../libs/gestures";
 export type CarouselInstance = ReturnType<typeof Carousel>;
-export declare const enum CarouselState {
-    Init = 0,
-    Ready = 1,
-    Destroyed = 2
+export interface CarouselHTMLElement extends HTMLElement {
+    carousel?: CarouselInstance;
 }
-export declare const enum CarouselSlideContentState {
-    Loading = 0,
-    Loaded = 1,
-    Error = 2
-}
+export { CarouselState, CarouselSlideContentState } from "./carousel.state";
+import { CarouselState, CarouselSlideContentState } from "./carousel.state";
 export interface CarouselSlide {
     /**
      * DOM element of the slide
@@ -350,7 +345,7 @@ export declare const Carousel: {
         /**
          * Get reference to the container DOM element
          */
-        getContainer: () => HTMLElement;
+        getContainer: () => HTMLElement | null;
         /**
          * Get value for the spacing between slides
          */
@@ -362,7 +357,7 @@ export declare const Carousel: {
         /**
          * Get the last `mousemove` event above the carousel
          */
-        getLastMouseMove: () => MouseEvent;
+        getLastMouseMove: () => MouseEvent | undefined;
         /**
          * Get current option
          */
@@ -422,7 +417,7 @@ export declare const Carousel: {
         /**
          * Get reference to the viewport DOM element
          */
-        getViewport: () => HTMLElement;
+        getViewport: () => HTMLElement | null;
         /**
          * Get width of the vieewport element (or height for a vertical carousel)
          */
@@ -547,4 +542,3 @@ export declare const Carousel: {
     };
     getDefaults(): CarouselOptions;
 };
-export {};

@@ -1,3 +1,14 @@
+# 6.1.14 (2026-04-29)
+
+### Bug Fixes
+
+- **Panzoom** Fix an issue where a vertical image could not be dragged correctly after rotating
+- **Panzoom** Fix pin positioning in some cases
+
+### Features
+
+- **Carousel** Add support for external controls
+
 # 6.1.13 (2026-03-02)
 
 ### Bug Fixes

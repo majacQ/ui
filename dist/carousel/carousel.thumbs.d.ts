@@ -53,7 +53,7 @@ export declare const Thumbs: () => {
     /**
      * Get reference to the container DOM element
      */
-    getContainer: () => HTMLElement;
+    getContainer: () => HTMLElement | undefined;
     /**
      * Get current type
      */

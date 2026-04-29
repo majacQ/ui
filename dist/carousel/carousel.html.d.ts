@@ -28,7 +28,7 @@ declare module "./carousel" {
         height?: string | number;
         preload?: boolean | string;
         src?: string;
-        type?: "iframe" | "pdf" | "map" | string;
+        type?: "iframe" | "pdf" | "gmap" | string;
         width?: string | number;
     }
 }

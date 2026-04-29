@@ -1,14 +1,15 @@
-import { PanzoomInstance } from "./panzoom";
+import { type PanzoomInstance } from "./panzoom";
+import { type PanzoomButtonName } from "../shared/buttons";
 export type ControlsItem = {
     tpl: string;
     click?: (instanceRef: PanzoomInstance, event: Event) => void;
 };
-declare const allControlsItems: Record<string, ControlsItem>;
+export type ControlsItemKey = PanzoomButtonName | (string & {});
 export type ControlsOptions = {
     /**
      * What buttons to display
      */
-    display: Array<keyof typeof allControlsItems>;
+    display: ControlsItemKey[];
     /**
      * Object containing all buttons. Use this to add your own buttons.
      */
@@ -33,6 +34,5 @@ export declare const Controls: () => {
     /**
      * Register new item
      */
-    add: (id: string, item: ControlsItem) => void;
+    add: (id: string, item: ControlsItem) => ControlsInstance;
 };
-export {};

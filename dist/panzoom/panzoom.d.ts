@@ -146,7 +146,7 @@ export interface PanzoomEventArgs {
     render: [
     ];
     /**
-     * Double click event detected
+     * Single click event detected
      */
     singleClick: [GesturesEventObject];
     /**
@@ -160,7 +160,7 @@ export interface PanzoomEventArgs {
     /**
      * Wheel event detected
      */
-    wheel: [WheelEvent, Number];
+    wheel: [WheelEvent, number];
 }
 export type PanzoomEventListener = (api: any, ...args: PanzoomEventArgs[keyof PanzoomEventArgs]) => void;
 type PanzoomEvents = {
@@ -235,7 +235,7 @@ export interface PanzoomOptions {
     /**
      * If the image download needs to be prevented
      */
-    protected: Boolean;
+    protected: boolean;
     /**
      * Default action to take on a single click event
      */
@@ -312,11 +312,11 @@ export declare const Panzoom: {
         /**
          * Get reference to the container DOM element
          */
-        getContainer: () => HTMLElement;
+        getContainer: () => HTMLElement | null;
         /**
          * Get reference to the content DOM element
          */
-        getContent: () => HTMLElement;
+        getContent: () => HTMLElement | undefined;
         /**
          * Get original width and height of the content, which can be adjusted using the `width` and `height` options
          */
@@ -380,11 +380,11 @@ export declare const Panzoom: {
         /**
          * Get reference to the viewport DOM element
          */
-        getViewport: () => HTMLElement;
+        getViewport: () => HTMLElement | undefined;
         /**
          * Get reference to the wrapper DOM element
          */
-        getWrapper: () => HTMLElement;
+        getWrapper: () => HTMLElement | undefined;
         /**
          * Initialize the Panzoom instance
          */

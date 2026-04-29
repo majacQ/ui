@@ -265,7 +265,7 @@ declare const CreateInstance: () => {
     /**
      * Retrieve reference to the instance's main element
      */
-    getContainer: () => HTMLElement;
+    getContainer: () => HTMLElement | undefined;
     /**
      * Retrieve instance ID
      */
